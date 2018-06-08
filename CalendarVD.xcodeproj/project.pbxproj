@@ -10,6 +10,12 @@
 		67E88FAE20CB021300312D09 /* CalendarVD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E88FA420CB021200312D09 /* CalendarVD.framework */; };
 		67E88FB320CB021300312D09 /* CalendarVDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FB220CB021300312D09 /* CalendarVDTests.swift */; };
 		67E88FB520CB021300312D09 /* CalendarVD.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E88FA720CB021200312D09 /* CalendarVD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E88FC420CB024600312D09 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FBE20CB024500312D09 /* CalendarHelper.swift */; };
+		67E88FC520CB024600312D09 /* CalendarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FBF20CB024500312D09 /* CalendarItemModel.swift */; };
+		67E88FC620CB024600312D09 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC020CB024500312D09 /* MonthView.swift */; };
+		67E88FC720CB024600312D09 /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC120CB024500312D09 /* WeekdaysView.swift */; };
+		67E88FC820CB024600312D09 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC220CB024500312D09 /* CalendarView.swift */; };
+		67E88FC920CB024600312D09 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC320CB024500312D09 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		67E88FAD20CB021300312D09 /* CalendarVDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarVDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E88FB220CB021300312D09 /* CalendarVDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVDTests.swift; sourceTree = "<group>"; };
 		67E88FB420CB021300312D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E88FBE20CB024500312D09 /* CalendarHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		67E88FBF20CB024500312D09 /* CalendarItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarItemModel.swift; sourceTree = "<group>"; };
+		67E88FC020CB024500312D09 /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		67E88FC120CB024500312D09 /* WeekdaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
+		67E88FC220CB024500312D09 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		67E88FC320CB024500312D09 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,12 @@
 		67E88FA620CB021200312D09 /* CalendarVD */ = {
 			isa = PBXGroup;
 			children = (
+				67E88FBE20CB024500312D09 /* CalendarHelper.swift */,
+				67E88FBF20CB024500312D09 /* CalendarItemModel.swift */,
+				67E88FC220CB024500312D09 /* CalendarView.swift */,
+				67E88FC320CB024500312D09 /* CalendarViewController.swift */,
+				67E88FC020CB024500312D09 /* MonthView.swift */,
+				67E88FC120CB024500312D09 /* WeekdaysView.swift */,
 				67E88FA720CB021200312D09 /* CalendarVD.h */,
 				67E88FA820CB021200312D09 /* Info.plist */,
 			);
@@ -148,6 +166,7 @@
 				TargetAttributes = {
 					67E88FA320CB021200312D09 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					67E88FAC20CB021300312D09 = {
 						CreatedOnToolsVersion = 9.4;
@@ -194,6 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E88FC920CB024600312D09 /* CalendarViewController.swift in Sources */,
+				67E88FC820CB024600312D09 /* CalendarView.swift in Sources */,
+				67E88FC520CB024600312D09 /* CalendarItemModel.swift in Sources */,
+				67E88FC720CB024600312D09 /* WeekdaysView.swift in Sources */,
+				67E88FC620CB024600312D09 /* MonthView.swift in Sources */,
+				67E88FC420CB024600312D09 /* CalendarHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +364,7 @@
 		67E88FB920CB021300312D09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vcapilladev.CalendarVD;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +391,7 @@
 		67E88FBA20CB021300312D09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +417,7 @@
 		67E88FBC20CB021300312D09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7AZRND92Z;
 				INFOPLIST_FILE = CalendarVDTests/Info.plist;
@@ -407,6 +436,7 @@
 		67E88FBD20CB021300312D09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7AZRND92Z;
 				INFOPLIST_FILE = CalendarVDTests/Info.plist;
