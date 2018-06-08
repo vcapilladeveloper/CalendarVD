@@ -72,12 +72,12 @@ public class CalendarView: UIView {
     var calendarDelegate: CalendarDelegate?
     var itemsToCalendar: [CalendarItemModel]?
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         initializeView()
     }
     
-    convenience init(theme: MyTheme, _ items: [CalendarItemModel]) {
+    public convenience init(theme: MyTheme, _ items: [CalendarItemModel]) {
         self.init()
         itemsToCalendar = items
         initializeView()
