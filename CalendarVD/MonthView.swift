@@ -26,11 +26,11 @@ class MonthView: UIView {
     
     // Delegate reference to send action to the delegate of instance
     var delegate: MonthViewDelegate?
-    
+    var bundle: Bundle!
     // Override constructor form inherit UIView constructor
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        bundle = Bundle(for: type(of: self))
         // Make Clear bakcground color
         self.backgroundColor = .clear
         
@@ -108,7 +108,7 @@ class MonthView: UIView {
     let btnForward: UIButton = {
         let btn = UIButton()
         btn.setTitle("", for: .normal)
-        btn.setImage(#imageLiteral(resourceName: "forward_arrow"), for: .normal)
+        btn.setImage(UIImage(named: "forward_arrow", in: Bundle.main, compatibleWith: nil), for: .normal)
         btn.backgroundColor = .clear
         btn.setTitleColor(Style.monthViewBtnRightColor, for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -119,7 +119,7 @@ class MonthView: UIView {
     let btnBack: UIButton = {
         let btn = UIButton()
         btn.setTitle("", for: .normal)
-        btn.setImage(#imageLiteral(resourceName: "back_arrow"), for: .normal)
+        btn.setImage(UIImage(named: "back_arrow", in: Bundle.main, compatibleWith: nil), for: .normal)
         btn.backgroundColor = .clear
         btn.imageView?.contentMode = .scaleAspectFill
         btn.setTitleColor(Style.monthViewBtnLeftColor, for: .normal)
