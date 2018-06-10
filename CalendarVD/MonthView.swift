@@ -81,12 +81,14 @@ class MonthView: UIView {
         lblName.text = "\(monthsName[currentMonthIndex]) \(currentYear)"
         
         self.addSubview(btnBack)
+        btnBack.layoutIfNeeded()
         btnBack.topAnchor.constraint(equalTo: topAnchor).isActive = true
         btnBack.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         btnBack.widthAnchor.constraint(equalToConstant: 50).isActive = true
         btnBack.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
         self.addSubview(btnForward)
+        btnForward.layoutIfNeeded()
         btnForward.topAnchor.constraint(equalTo: topAnchor).isActive=true
         btnForward.rightAnchor.constraint(equalTo: rightAnchor).isActive=true
         btnForward.widthAnchor.constraint(equalToConstant: 50).isActive=true
