@@ -15,7 +15,6 @@
 		67E88FC620CB024600312D09 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC020CB024500312D09 /* MonthView.swift */; };
 		67E88FC720CB024600312D09 /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC120CB024500312D09 /* WeekdaysView.swift */; };
 		67E88FC820CB024600312D09 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC220CB024500312D09 /* CalendarView.swift */; };
-		67E88FC920CB024600312D09 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E88FC320CB024500312D09 /* CalendarViewController.swift */; };
 		67E88FD120CBDED600312D09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E88FD020CBDED600312D09 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +40,6 @@
 		67E88FC020CB024500312D09 /* MonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
 		67E88FC120CB024500312D09 /* WeekdaysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
 		67E88FC220CB024500312D09 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		67E88FC320CB024500312D09 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		67E88FD020CBDED600312D09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +86,6 @@
 				67E88FBE20CB024500312D09 /* CalendarHelper.swift */,
 				67E88FBF20CB024500312D09 /* CalendarItemModel.swift */,
 				67E88FC220CB024500312D09 /* CalendarView.swift */,
-				67E88FC320CB024500312D09 /* CalendarViewController.swift */,
 				67E88FC020CB024500312D09 /* MonthView.swift */,
 				67E88FC120CB024500312D09 /* WeekdaysView.swift */,
 				67E88FA720CB021200312D09 /* CalendarVD.h */,
@@ -217,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E88FC920CB024600312D09 /* CalendarViewController.swift in Sources */,
 				67E88FC820CB024600312D09 /* CalendarView.swift in Sources */,
 				67E88FC520CB024600312D09 /* CalendarItemModel.swift in Sources */,
 				67E88FC720CB024600312D09 /* WeekdaysView.swift in Sources */,
