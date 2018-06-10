@@ -86,8 +86,8 @@ public class CalendarView: UIView {
     public func updateInfo(_ items: [CalendarItemModel]) {
         itemsToCalendar = items
         firstWeekDayOfMonth=getFirstWeekDay()
-        //presentMonthIndex=currentMonthIndex
-        //presentYear=currentYear
+        presentMonthIndex=currentMonthIndex
+        presentYear=currentYear
         setupViews()
         myCollectionView.reloadData()
     }
