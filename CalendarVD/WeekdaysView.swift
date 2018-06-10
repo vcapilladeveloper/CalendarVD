@@ -8,15 +8,15 @@
 
 import UIKit
 
-class WeekdaysView: UIView {
+public class WeekdaysView: UIView {
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
         setupViews()
     }
     
-    func setupViews() {
+    public func setupViews() {
         addSubview(daysStackView)
         daysStackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         daysStackView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -33,14 +33,14 @@ class WeekdaysView: UIView {
         }
     }
     
-    let daysStackView: UIStackView = {
+    public let daysStackView: UIStackView = {
        let stackView = UIStackView()
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

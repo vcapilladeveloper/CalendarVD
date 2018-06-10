@@ -14,7 +14,7 @@ protocol MonthViewDelegate {
 }
 
 // Class to define the most top line in the calender where we set the current month and the current year and put navigation arrow to move arround the months and years
-class MonthView: UIView {
+public class MonthView: UIView {
     // Months Name Collection
     var monthsName = getMonthsNames()
     
@@ -28,7 +28,7 @@ class MonthView: UIView {
     var delegate: MonthViewDelegate?
     var bundle: Bundle!
     // Override constructor form inherit UIView constructor
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         bundle = Bundle(for: type(of: self))
         // Make Clear bakcground color
@@ -48,7 +48,7 @@ class MonthView: UIView {
     }
     
     // Contructor for use in the Storyboard
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -73,7 +73,7 @@ class MonthView: UIView {
     }
     
     //Set up the back and forward view and the month and year view.
-    func setUpViews() {
+    public func setUpViews() {
         self.addSubview(lblName)
         lblName.topAnchor.constraint(equalTo: topAnchor).isActive = true
         lblName.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -97,7 +97,7 @@ class MonthView: UIView {
     }
     
     // Computed constant that defines the month and year
-    let lblName: UILabel = {
+    public let lblName: UILabel = {
         let lbl = UILabel()
         lbl.text = "Default month year text"
         lbl.textColor = Style.monthViewLblColor
@@ -108,7 +108,7 @@ class MonthView: UIView {
     }()
     
     // Computed constant that defines the back and forward buttons to move arround de months and years
-    let btnForward: UIButton = {
+    public let btnForward: UIButton = {
         let btn = UIButton()
         btn.setTitle("", for: .normal)
         btn.setImage(UIImage(named: "forward_arrow", in: Bundle.main, compatibleWith: nil), for: .normal)
@@ -119,7 +119,7 @@ class MonthView: UIView {
         return btn
     }()
     
-    let btnBack: UIButton = {
+    public let btnBack: UIButton = {
         let btn = UIButton()
         btn.setTitle("", for: .normal)
         btn.setImage(UIImage(named: "back_arrow", in: Bundle.main, compatibleWith: nil), for: .normal)

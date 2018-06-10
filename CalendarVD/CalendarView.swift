@@ -147,19 +147,19 @@ public class CalendarView: UIView {
         myCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive=true
     }
     
-    let monthView: MonthView = {
+    public let monthView: MonthView = {
         let v=MonthView()
         v.translatesAutoresizingMaskIntoConstraints=false
         return v
     }()
     
-    let weekdaysView: WeekdaysView = {
+    public let weekdaysView: WeekdaysView = {
         let v=WeekdaysView()
         v.translatesAutoresizingMaskIntoConstraints=false
         return v
     }()
     
-    let myCollectionView: UICollectionView = {
+    public let myCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
@@ -249,7 +249,7 @@ extension CalendarView: UICollectionViewDataSource {
         }
     }
     
-    func getBackgroundColor(_ state: Int) -> UIColor {
+    public func getBackgroundColor(_ state: Int) -> UIColor {
         switch state {
         case 7:
             return Colors.continuousTraining
@@ -283,15 +283,15 @@ extension CalendarView: UICollectionViewDataSource {
 }
 
 class DateCVCell: UICollectionViewCell {
-    var date = ""
-    override init(frame: CGRect) {
+    public var date = ""
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor=UIColor.clear
         
         setupViews()
     }
     
-    func setupViews() {
+    public func setupViews() {
         addSubview(lbl)
         lbl.topAnchor.constraint(equalTo: topAnchor).isActive=true
         lbl.leftAnchor.constraint(equalTo: leftAnchor).isActive=true
@@ -299,7 +299,7 @@ class DateCVCell: UICollectionViewCell {
         lbl.bottomAnchor.constraint(equalTo: bottomAnchor).isActive=true
     }
     
-    let lbl: UILabel = {
+    public let lbl: UILabel = {
         let label = UILabel()
         label.text = "00"
         label.textAlignment = .center
@@ -311,7 +311,7 @@ class DateCVCell: UICollectionViewCell {
         return label
     }()
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
