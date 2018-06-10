@@ -364,6 +364,7 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
 
 extension CalendarView: MonthViewDelegate {
     public func didChangeMonth(_ monthIndex: Int, _ year: Int) {
+        print("Set month \(monthIndex) and year \(year)")
         currentMonthIndex=monthIndex+1
         currentYear = year
         firstWeekDayOfMonth=getFirstWeekDay()
