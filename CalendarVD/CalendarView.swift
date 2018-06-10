@@ -300,6 +300,8 @@ class DateCVCell: UICollectionViewCell {
         label.font=UIFont.systemFont(ofSize: 16)
         label.textColor=Colors.darkGray
         label.translatesAutoresizingMaskIntoConstraints=false
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.2
         return label
     }()
     
