@@ -121,13 +121,13 @@ public class CalendarView: UIView {
     }
     
     public func setupViews() {
-        let bundle = Bundle(for: type(of: self))
+       /* let bundle = Bundle(for: type(of: self))
         let forward = UIImage(named: "forward_arrow", in: bundle, compatibleWith: nil)!
         let back = UIImage(named: "back_arrow", in: bundle, compatibleWith: nil)!
-        
+        */
         addSubview(monthView)
-        monthView.btnBack.setImage(back, for: .normal)
-        monthView.btnForward.setImage(forward, for: .normal)
+        //monthView.btnBack.setImage(back, for: .normal)
+        //monthView.btnForward.setImage(forward, for: .normal)
         monthView.topAnchor.constraint(equalTo: topAnchor).isActive=true
         monthView.leftAnchor.constraint(equalTo: leftAnchor).isActive=true
         monthView.rightAnchor.constraint(equalTo: rightAnchor).isActive=true
