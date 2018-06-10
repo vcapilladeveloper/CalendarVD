@@ -53,7 +53,7 @@ class MonthView: UIView {
     }
     
     // Action to go back and forward in month and year. It update the label with the name of the month and the year and tell to the delegate if need to change something with the new month and year
-    @objc func backAndfordwardInMonthAction(_ sender: UIButton) {
+    @objc public func backAndfordwardInMonthAction(_ sender: UIButton) {
         print("Change month")
         if sender == btnForward {
             currentMonthIndex += 1
