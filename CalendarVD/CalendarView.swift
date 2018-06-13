@@ -14,8 +14,8 @@ public protocol CalendarDelegate {
 }
 
 public struct Colors {
-    static var darkGray = #colorLiteral(red: 0.3764705882, green: 0.3647058824, blue: 0.3647058824, alpha: 1)
-    static var darkRed = #colorLiteral(red: 0.5019607843, green: 0.1529411765, blue: 0.1764705882, alpha: 1)
+    static var darkGray = #colorLiteral(red: 0.2705882353, green: 0.3098039216, blue: 0.3882352941, alpha: 1)
+    static var darkRed = #colorLiteral(red: 0.8352941176, green: 0, blue: 0.3411764706, alpha: 1)
     static var continuousTraining = #colorLiteral(red: 0.9921568627, green: 0.5960784314, blue: 0.003921568627, alpha: 1)
     static var instrumentalTraining = #colorLiteral(red: 0.9921568627, green: 0.7960784314, blue: 0.003921568627, alpha: 1)
     static var technicalSessions = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.5019607843, alpha: 1)
