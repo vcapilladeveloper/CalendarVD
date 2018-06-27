@@ -344,12 +344,10 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width/7 - 8
         let height: CGFloat = (collectionView.frame.height - (monthView.frame.height + weekdaysView.frame.height)) / CGFloat((getNumberOfDaysInMonth(currentMonthIndex-1, currentYear) + firstWeekDayOfMonth - 1)/7)
-        
-        print("WIDTH")
+        print("Width")
         print(width)
-        print("HEIGHT")
+        print("Height")
         print(height)
-        print(collectionView.frame.height / CGFloat((getNumberOfDaysInMonth(currentMonthIndex-1, currentYear) + firstWeekDayOfMonth - 1)/7))
         return CGSize(width: width, height: height)
     }
     
