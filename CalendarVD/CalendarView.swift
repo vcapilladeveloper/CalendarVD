@@ -330,6 +330,7 @@ extension Date {
 extension String {
     static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
+        print(Locale.preferredLanguages[0])
         formatter.locale = Locale(identifier: Locale.preferredLanguages[0])
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
