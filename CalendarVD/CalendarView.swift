@@ -12,7 +12,7 @@ public protocol CalendarDelegate {
     func changeInfoCalendar(_ month: Int, _ year: Int)
     func openCalendarEvent(_ date: String)
 }
-
+    var specialLocale = Locale.preferredLanguages[0]
 public struct Colors {
     static var darkGray = #colorLiteral(red: 0.2705882353, green: 0.3098039216, blue: 0.3882352941, alpha: 1)
     static var darkRed = #colorLiteral(red: 0.8352941176, green: 0, blue: 0.3411764706, alpha: 1)
@@ -69,6 +69,7 @@ public class CalendarView: UIView {
     var presentYear = 0
     var todaysDate = 0
     var firstWeekDayOfMonth = 0 //(Sunday-Saturday 1-7)
+
     public var calendarDelegate: CalendarDelegate?
     var itemsToCalendar: [CalendarItemModel]?
     
@@ -77,10 +78,11 @@ public class CalendarView: UIView {
         initializeView()
     }
     
-    public convenience init(theme: MyTheme, _ items: [CalendarItemModel]) {
+    public convenience init(theme: MyTheme, _ items: [CalendarItemModel], _ locale: String? = Locale.preferredLanguages[0]) {
         self.init()
         itemsToCalendar = items
         initializeView()
+        specialLocale = locale ?? Locale.preferredLanguages[0]
     }
     
     public func updateInfo(_ items: [CalendarItemModel]) {
@@ -330,8 +332,8 @@ extension Date {
 extension String {
     static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        print(Locale.preferredLanguages[0])
-        formatter.locale = Locale(identifier: Locale.preferredLanguages[0])
+        
+        formatter.locale = Locale(identifier: specialLocale)
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()

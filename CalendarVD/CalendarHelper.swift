@@ -21,7 +21,7 @@ func getNumberOfDaysInMonth(_ month: Int, _ year: Int) -> Int {
 // Return days names from monday to sunday
 func getWeekDaysName() -> [String] {
     let f = DateFormatter()
-    f.locale = Locale(identifier: Locale.preferredLanguages[0])
+    f.locale = Locale(identifier: specialLocale)
     var days = f.shortStandaloneWeekdaySymbols
     
     if f.calendar.firstWeekday == 2 {
@@ -35,7 +35,7 @@ func getWeekDaysName() -> [String] {
 //Return months name from Jenuary to December
 func getMonthsNames() -> [String] {
     let f = DateFormatter()
-    f.locale = Locale(identifier: Locale.preferredLanguages[0])
+    f.locale = Locale(identifier: specialLocale)
     
     let months = f.monthSymbols
     return months!
