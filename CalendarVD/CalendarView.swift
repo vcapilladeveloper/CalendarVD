@@ -79,10 +79,12 @@ public class CalendarView: UIView {
     }
     
     public convenience init(theme: MyTheme, _ items: [CalendarItemModel], _ locale: String? = Locale.preferredLanguages[0]) {
+        specialLocale = locale ?? Locale.preferredLanguages[0]
         self.init()
+        //specialLocale = locale ?? Locale.preferredLanguages[0]
         itemsToCalendar = items
         initializeView()
-        specialLocale = locale ?? Locale.preferredLanguages[0]
+        
     }
     
     public func updateInfo(_ items: [CalendarItemModel]) {
