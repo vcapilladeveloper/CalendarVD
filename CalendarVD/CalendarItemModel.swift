@@ -15,11 +15,11 @@ public enum MyTheme {
 
 public struct CalendarItemModel: Codable {
     // swiftlint:disable identifier_name
-    var id: Int
-    var date: String
-    var state: String
-    var state_id: Int
+    public var id: Int
+    public var date: String
+    public var state: String
+    public var state_id: Int
     // swiftlint:enable identifier_name
-    var link: String
-    var desc: String
+    public var link: String
+    public var desc: String
 }
