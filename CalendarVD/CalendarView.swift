@@ -221,10 +221,11 @@ extension CalendarView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? DateCVCell {
+            cell.backgroundColor = .white
         cell.backgroundColor=UIColor.clear
         if indexPath.item <= firstWeekDayOfMonth - 2 {
             cell.isHidden=true
-            cell.backgroundColor = .white
+            
         } else {
             let calcDate = indexPath.row-firstWeekDayOfMonth+2
             cell.isHidden=false
