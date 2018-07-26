@@ -220,36 +220,35 @@ extension CalendarView: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell=collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? DateCVCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? DateCVCell {
             print("Clear background")
-        cell.backgroundColor=UIColor.clear
-        if indexPath.item <= firstWeekDayOfMonth - 2 {
-            cell.isHidden=true
-            
-        } else {
-            let calcDate = indexPath.row-firstWeekDayOfMonth+2
-            cell.isHidden=false
-            cell.lbl.text="\(calcDate)"
-            let day = (calcDate > 0 && calcDate < 10) ? "0\(calcDate)" : "\(calcDate)"
-            let month = (currentMonthIndex > 0 && currentMonthIndex < 10) ? "0\(currentMonthIndex)" : "\(currentMonthIndex)"
-            cell.date = "\(day)-\(month)-\(currentYear)"
-            if let items = itemsToCalendar, items.filter({$0.date == "\(day)-\(month)-\(currentYear)"}).count > 0 {
-                if let type = items.filter({$0.date == "\(day)-\(month)-\(currentYear)"}).first?.state_id {
-                        cell.lbl.backgroundColor = getBackgroundColor(type)
+            cell.backgroundColor=UIColor.clear
+            if indexPath.item <= firstWeekDayOfMonth - 2 {
+                cell.isHidden=true
+            } else {
+                let calcDate = indexPath.row-firstWeekDayOfMonth+2
+                cell.isHidden=false
+                cell.lbl.text="\(calcDate)"
+                let day = (calcDate > 0 && calcDate < 10) ? "0\(calcDate)" : "\(calcDate)"
+                let month = (currentMonthIndex > 0 && currentMonthIndex < 10) ? "0\(currentMonthIndex)" : "\(currentMonthIndex)"
+                cell.date = "\(day)-\(month)-\(currentYear)"
+                if let items = itemsToCalendar, items.filter({$0.date == "\(day)-\(month)-\(currentYear)"}).count > 0 {
+                    if let type = items.filter({$0.date == "\(day)-\(month)-\(currentYear)"}).first?.state_id {
+                            cell.lbl.backgroundColor = getBackgroundColor(type)
+                    } else {
+                        cell.lbl.backgroundColor = .white
+                    }
+                }
+                
+                if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+                    cell.isUserInteractionEnabled=true
+                    cell.lbl.textColor = UIColor.lightGray
                 } else {
-                    cell.lbl.backgroundColor = .white
+                    cell.isUserInteractionEnabled=true
+                    cell.lbl.textColor = Style.activeCellLblColor
                 }
             }
-            
-            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
-                cell.isUserInteractionEnabled=true
-                cell.lbl.textColor = UIColor.lightGray
-            } else {
-                cell.isUserInteractionEnabled=true
-                cell.lbl.textColor = Style.activeCellLblColor
-            }
-        }
-        return cell
+            return cell
         } else {
             return UICollectionViewCell()
         }
@@ -371,5 +370,6 @@ extension CalendarView: MonthViewDelegate {
         firstWeekDayOfMonth=getFirstWeekDay()
         monthView.btnBack.isEnabled = !(currentMonthIndex == presentMonthIndex && currentYear == presentYear)
         calendarDelegate?.changeInfoCalendar(monthIndex + 1, year)
+        print("Calendar Will Change to \(monthIndex + 1) from \(year)")
     }
 }
