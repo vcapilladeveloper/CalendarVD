@@ -224,6 +224,7 @@ extension CalendarView: UICollectionViewDataSource {
         cell.backgroundColor=UIColor.clear
         if indexPath.item <= firstWeekDayOfMonth - 2 {
             cell.isHidden=true
+            cell.backgroundColor = .white
         } else {
             let calcDate = indexPath.row-firstWeekDayOfMonth+2
             cell.isHidden=false
@@ -349,10 +350,6 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width/7 - 8
         let height: CGFloat = (collectionView.frame.height - (monthView.frame.height + weekdaysView.frame.height)) / CGFloat((getNumberOfDaysInMonth(currentMonthIndex-1, currentYear) + firstWeekDayOfMonth - 1)/7)
-        print("Width")
-        print(width)
-        print("Height")
-        print(height)
         return CGSize(width: width, height: height)
     }
     
