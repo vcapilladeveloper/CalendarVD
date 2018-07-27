@@ -90,8 +90,8 @@ public class CalendarView: UIView {
     public func updateInfo(_ items: [CalendarItemModel]) {
         itemsToCalendar = items
         firstWeekDayOfMonth=getFirstWeekDay()
-        presentMonthIndex=currentMonthIndex
-        presentYear=currentYear
+        //presentMonthIndex=currentMonthIndex
+        //presentYear=currentYear
         setupViews()
         myCollectionView.reloadData()
     }
@@ -222,7 +222,7 @@ extension CalendarView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? DateCVCell {
             print("Clear background")
-            cell.backgroundColor=UIColor.clear
+            cell.lbl.backgroundColor=UIColor.clear
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 cell.isHidden=true
             } else {
