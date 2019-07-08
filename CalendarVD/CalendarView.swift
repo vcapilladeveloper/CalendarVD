@@ -209,7 +209,14 @@ extension CalendarView: UICollectionViewDelegate {
         let cell=collectionView.cellForItem(at: indexPath)
         cell?.backgroundColor=UIColor.clear
         if let lbl = cell?.subviews[1] as? UILabel {
-         lbl.textColor = Style.activeCellLblColor
+            lbl.textColor = Style.activeCellLblColor
+            
+            let calcDate = indexPath.row-firstWeekDayOfMonth+2
+            if calcDate < todaysDate && currentYear == presentYear && currentMonthIndex == presentMonthIndex {
+                lbl.textColor = UIColor.lightGray
+            } else {
+                lbl.textColor = Style.activeCellLblColor
+            }
         }
     }
 }
@@ -224,6 +231,7 @@ extension CalendarView: UICollectionViewDataSource {
             print("Clear background")
             cell.lbl.backgroundColor=UIColor.clear
             cell.backgroundColor=UIColor.clear
+            cell.lbl.backgroundColor=UIColor.clear
             if indexPath.item <= firstWeekDayOfMonth - 2 {
                 cell.isHidden=true
             } else {
